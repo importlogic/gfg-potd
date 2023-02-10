@@ -2,9 +2,10 @@
 
 Author : Manas Rawat
 Date : 10/02/2023
-Problem : Balloons Everywhere
+Problem : Balloon Everywhere
 Difficulty : Easy
 Problem Link : https://practice.geeksforgeeks.org/problems/45fa306a9116332ece4cecdaedf50f140bd252d4/1
+Video Solution : https://www.youtube.com/watch?v=4yDDD0Dq1Bo
 
 */
 

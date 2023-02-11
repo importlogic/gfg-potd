@@ -5,11 +5,9 @@ Date : 10/02/2023
 Problem : Balloon Everywhere
 Difficulty : Easy
 Problem Link : https://practice.geeksforgeeks.org/problems/45fa306a9116332ece4cecdaedf50f140bd252d4/1
-Video Solution : https://www.youtube.com/watch?v=4yDDD0Dq1Bo
+Video Solution : https://youtu.be/4yDDD0Dq1Bo
 
 */
-
-
 
 
 //{ Driver Code Starts

@@ -43,16 +43,16 @@ bool checker(int n, int c, int d){
     string s = to_string(n);
     
     for(auto i : s){
-        if(i - '0' != c and i - '0' != d)
-            return 0;
+        if(i - '0' == c or i - '0' == d)
+            return 1;
     }
     
-    return 1;
+    return 0;
 }
 
 int ncr(long long n, long long r){
     
-    long long ans = fact[n]; // ncr = n! / ((n - r)! * r!)
+    long long ans = fact[n];
     ans = (ans * power(fact[r], mod - 2)) % mod;
     ans = (ans * power(fact[n - r], mod - 2)) % mod;
 
@@ -71,10 +71,17 @@ class Solution {
             
         int ans = 0;
         
+        if(A == B){
+            if(checker(N * A, C, D))
+                return 1;
+            return 0;
+        }
+        
         for(int i = 0; i <= N; i++){
             int sum = i * A + (N - i) * B;
-            if(checker(sum, C, D))
+            if(checker(sum, C, D)){
                 ans = (ans + ncr(N, i)) % mod;
+            }
         }
         
         return ans;

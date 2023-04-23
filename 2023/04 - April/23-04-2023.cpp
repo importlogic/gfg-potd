@@ -23,13 +23,12 @@ using namespace std;
 class Solution{
 public:
     int minimumNumber(int n,vector<int> &arr){
-        int cnt = 0;
+        int ans = arr[0];
         
-        for(int i = 0; i < n; i++)
-            cnt += arr[i] & 1;
+        for(int i = 1; i < n; i++)
+            ans = __gcd(ans, arr[i]);
             
-        return ((cnt) ? 1 : 2);
-    }
+        return ans;
 };
 
 //{ Driver Code Starts.

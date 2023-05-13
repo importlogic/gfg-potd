@@ -21,8 +21,11 @@ class Solution {
     int arrayOperations(int n, vector<int> &arr) {
         int ans = 0;
         int current = 0;
+        int count = 0;
         
         for(int i = 0; i < n; i++){
+            count += arr[i] == 0;
+            
             if(arr[i] == 0){
                 ans += current > 0;
                 current = 0;
@@ -34,7 +37,7 @@ class Solution {
         
         ans += current > 0;
         
-        return ans;
+        return (count) ? ans : -1;
     }
 };
 

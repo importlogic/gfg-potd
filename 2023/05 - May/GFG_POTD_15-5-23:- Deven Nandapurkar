@@ -1,0 +1,88 @@
+/* 
+Author:- Deven Nandapurkar 
+
+Date:- 15th may 
+
+Difficulty:- Medium
+
+Problem:- Count Total Setbits 
+You are given a number N. Find the total number of setbits in the numbers from 1 to N.  
+
+Expected Time Complexity: O(1)
+Expected Auxiliary Space: O(1)
+
+Problem is difficult due to the same expected time complexity, other wise the brute force approach to this is very easy as it is not difficult to coun the SetBits. 
+
+Problem link:- https://practice.geeksforgeeks.org/problems/1132bd8ee92072cd31441858402641d6800fa6b3/1 
+
+Cpp solution below 👇👇
+*/
+
+class Solution {
+  public:
+    long long countBits(long long N) {
+        // code here
+        
+        // binary number of an integer value then it is formed as the combination of 0's and 1's. 
+        
+        // the digit 1 is known as set bit in the terms of the computer.
+        
+        // below is the brute force approach.
+        
+        /* long long cnt = 0; // storing the number of set bits.
+        for(int i=1;i<=N;i++) {  
+            int x=i;
+            while(x){
+                if((x&1)==1) cnt++;  // bitwise operation with 1, then if its last bit is set then it gives 1 else return 0.
+                x /= 2; // we do x/2 everytime, so that in the next ieration we can check next bit is set or not. 
+            }
+        }
+        return cnt;
+        */
+        
+        // T.C:- o(n log n) 
+        // for counting set bits of every number we need logN, and we are doing it for n numbers. 
+        // hence n*logn.  
+        
+        
+        // my solution 👇👇
+        
+        long long two = 2; 
+        long long ans = 0;
+        
+        long long n = N;
+        
+        while(n) {
+            ans += (N / two) * (two >> 1);
+            if ((N & (two - 1)) > (two >> 1) - 1)
+                ans += (N & (two - 1)) - (two >> 1) + 1;
+            two <<= 1;
+            n >>= 1;
+        }
+        return ans;
+    }
+    
+    // time complexity:- O(1) 
+    // Space Complexity :- O(1) 
+    
+    /*  the above solution is based on the fact that for the ith least significant bit, answer will be  
+            (N/2^i)*2^(i-1)+ X 
+            
+        need to decalre variable two coz in the 2nd last line of the function... when i wrote 2<<=1; it threw compilation error at me; 
+        
+        hence resolved that using the variable and cleared the sampel test case; 
+    */
+    
+    // here is a fully optimized solution:- 
+        
+        long long count = 0;
+         for (int i = 0; i < 31; i++) {
+            int x = 1 << i; // calculate the ith bit
+            long long y = (N + 1) / (x * 2) * x; // count the number of set bits up to the ith bit
+            long long z = (N + 1) % (x * 2) - x; // count the number of set bits in the ith bit
+            count += y + std::max(z, 0LL); // add the counts to the total
+        }
+        return count;
+        
+        // end of optimised solution. 
+};

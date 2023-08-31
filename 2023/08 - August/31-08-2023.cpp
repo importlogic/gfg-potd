@@ -35,6 +35,20 @@ int setHeights(Node* n)
 	return n->height;
 }
 
+
+
+
+/*  Hello Buddy, This is Prince 
+    Actually I see your code and I guess you can use HashMap data structure also for this code 
+    so that time complexity and space complexity would be minimized.
+    
+    If you find my suggestion to be considered then please informed me!
+    thanks
+*/
+
+
+
+
 Node* buildTree(string str)
 {   
     // Corner Case

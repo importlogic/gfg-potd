@@ -1,7 +1,7 @@
 /*
 
 Author : Manas Rawat
-Date : 18/11/2023
+Date : 19/11/2023
 Problem : Intersection of two sorted Linked lists
 Difficulty : Easy
 Problem Link : https://www.geeksforgeeks.org/problems/intersection-of-two-sorted-linked-lists/1

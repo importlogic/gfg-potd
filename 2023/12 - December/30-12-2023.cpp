@@ -32,23 +32,16 @@ class Solution{
         for(int i = 0; i < n; i++)
             ++votes[arr[i]];
             
-        auto smaller = [](string x, string y) -> bool {
-            if(x.size() == y.size())
-                return x < y;
-                
-            return x.size() < y.size();
-        };
-            
         int best = 0;
         vector<string> ans(2);
         
-        for(auto &i : votes){
+        for(auto i : votes){
             if(i.second > best){
                 best = i.second;
                 ans[0] = i.first;
                 ans[1] = to_string(best);
             }
-            else if(smaller(i.first, ans[0])){
+            else if(i.second == best and i.first < ans[0]){
                 ans[0] = i.first;
             }
         }

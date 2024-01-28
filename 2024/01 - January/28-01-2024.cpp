@@ -66,7 +66,7 @@ class Solution {
             if(pos > 0 and dp[pos - 1][k] < n){
                 ans |= (1LL << pos);
                 n -= dp[pos - 1][k];
-                k = max(k - 1, 0LL);
+                k = (k-1<0LL)?0LL:k-1;
             }
             
             --pos;

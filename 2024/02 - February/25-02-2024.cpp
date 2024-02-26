@@ -8,6 +8,8 @@ Problem Link : https://www.geeksforgeeks.org/problems/reach-a-given-score-158711
 Video Solution : NA
 
 */
+
+
 //{ Driver Code Starts
 // Driver Code
 #include<bits/stdc++.h>

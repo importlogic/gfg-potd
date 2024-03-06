@@ -2,7 +2,7 @@
 
 Author : Mrpankajpandey_
 Date : 05/03/2024
-Problem :Maximum Index
+Problem : Maximum Index
 Difficulty : Medium
 Problem Link : https://www.geeksforgeeks.org/problems/maximum-index-1587115620/1
 Video Solution : NA

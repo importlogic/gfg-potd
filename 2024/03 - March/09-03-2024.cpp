@@ -1,5 +1,3 @@
-
-
 /*
 
 Author : Mrpankajpandey
@@ -10,6 +8,8 @@ Problem Link : https://www.geeksforgeeks.org/problems/find-the-n-th-character592
 Video Solution : NA
 
 */
+
+
 //{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;

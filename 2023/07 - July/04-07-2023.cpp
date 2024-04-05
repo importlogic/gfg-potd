@@ -18,35 +18,32 @@ using namespace std;
 
 // } Driver Code Ends
 
-
 class Solution{
   public:
-    int countSubArrayProductLessThanK(const vector<int>& a, int n, long long k) {
-        int l, r, ans;
-        l = r = ans = 0;
-        long long product = a[0];
-        
-        while(r < n){
-            if(product < k){
-                ans += (r - l + 1);
-                ++r;
-                if(r < n)
-                    product *= a[r];
-            }
-            else{
-                product /= a[l];
-                
-                if(l == r){
-                    ++r;
-                    if(r < n)
-                        product *= a[r];
-                }
-                
-                ++l;
+    long long countSubArrayProductLessThanK(const vector<int>& a, int n, long long k) {
+        long long p = 1;
+        long long res = 0;
+        for (int start = 0, end = 0; end < n; end++) {
+    
+            // Move right bound by 1 step. Update the product.
+            p *= a[end];
+    
+            // Move left bound so guarantee that p is again
+            // less than k.
+            while (start < end && p >= k) p /= a[start++];
+    
+            // If p is less than k, update the counter.
+            // Note that this is working even for (start == end):
+            // it means that the previous window cannot grow
+            // anymore and a single array element is the only
+            // addendum.
+            if (p < k) {
+                int len = end - start + 1;
+                res += len;
             }
         }
-        
-        return ans;
+    
+        return res;
     }
 };
 
